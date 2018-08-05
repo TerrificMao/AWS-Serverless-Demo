@@ -121,8 +121,6 @@ exports.handler = (event, context, callback) => {
 
 ![Image one](assets/24.png)
 
- 
-
 ## 3. Lambda + API Gateway + 传参
 
 如果客户端需要想传递参数，怎么办呢？
@@ -237,8 +235,6 @@ REPORT RequestId: 7c432478-ee78-11e6-8d9b-21a4e48977b8     Duration: 0.41 ms    
 apex logs
 ```
 
-##  
-
 ## 5. Lambda + CloudWatch Event
 
 有些场景，有可能是想定期、或者定时让Lambda去执行处理逻辑，针对这种情况，可以使用CloudWatch Event，触发Lambda定时执行。
@@ -253,13 +249,11 @@ apex logs
 
 <http://docs.aws.amazon.com/zh_cn/AmazonCloudWatch/latest/events/RunLambdaSchedule.html> 
 
- 
-
 ## 6. Lambda + DynamoDB –>数据写入到数据库
 
 用户发送HTTP请求，交给API Gateway处理，业务逻辑交给Lambda处理，那如果动态的数据需要存储到数据库呢？AWS提供了NoSQL的数据库DynamoDB和关系型数据库RDS，这些都可以和Lambda配合使用。值得一提的是，Lambda可以和RDS一样，放在VPC内部，配置安全组。
 
-那么，如何使用Lambda把处理后的数据存储在DynamoDB呢？Lambda又怎么和数据库进行交互呢？直接上代码。首先创建一个Lambda函数，比如命名为: [lambda_dynamodb_write](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/lambda_dynamodb_read)，代码如下
+那么，如何使用Lambda把处理后的数据存储在DynamoDB呢？Lambda又怎么和数据库进行交互呢？直接上代码。首先创建一个Lambda函数，比如命名为: lambda_dynamodb_write，代码如下
 
 ![Image one](assets/36.png)
 
@@ -269,7 +263,7 @@ console.log('Loading function');
 var AWS = require('aws-sdk'); 
 var docClient = new AWS.DynamoDB.DocumentClient(); 
 AWS.config.region = 'us-west-2’; 
-exports.handler = function (event, context, callback){ 
+exports.handler = function (event, context, callback){
      var params = { 
           Item: { 
                date: Date.now(), 
@@ -291,7 +285,7 @@ exports.handler = function (event, context, callback){
 
 搞定了数据库的写入操作，Lambda又怎么读写数据库里的内容呢？直接上代码。
 
-创建一个Lambda函数，比如命名为: [lambda_dynamodb_](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/lambda_dynamodb_read)read，代码如下
+创建一个Lambda函数，比如命名为: lambda_dynamodb_read，代码如下
 
 ![Image one](assets/37.png)
 
@@ -333,8 +327,6 @@ API Gateway中可以解决跨域CORS的问题，点击“Enable CORS”。
 
 到这里，客户端浏览器发出请求，会发送到API Gateway 那边，然后API Gateway传递客户端的参数给Lambda，Lambda通过Event对象获取API Gateway传参的值，并处理逻辑。比如将数据写入到DynamoDB，或者从DynamoDB读取数据显示在前端。
 
- 
-
 ## 9. Lambda + API Gateway + DynamoDB + S3 + CloudFront
 
 托管静态网站。如果您是一个网站，或者是移动、IoT等后台，可以把前端显示的静态内容，比如HTML，JS，CSS，以及所有图片托管在S3上，启用静态网站托管。
@@ -342,8 +334,6 @@ API Gateway中可以解决跨域CORS的问题，点击“Enable CORS”。
 到这里，一个serverless的网站就做好了，您可以点击下面链接进行尝试。
 
 <https://s3.amazonaws.com/danrong.io/index-ajax.html> 
-
- 
 
 ![Image one](assets/41.png)
 
@@ -380,26 +370,3 @@ https://aws.amazon.com/cn/blogs/china/lambda-serverless/
 <https://aws.amazon.com/cn/lambda/>
 
 <http://docs.aws.amazon.com/zh_cn/lambda/latest/dg/welcome.html> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
