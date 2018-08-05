@@ -262,7 +262,7 @@ apex logs
 console.log('Loading function'); 
 var AWS = require('aws-sdk'); 
 var docClient = new AWS.DynamoDB.DocumentClient(); 
-AWS.config.region = 'us-west-2’; 
+AWS.config.region = 'us-west-2'; 
 exports.handler = function (event, context, callback){
      var params = { 
           Item: { 
