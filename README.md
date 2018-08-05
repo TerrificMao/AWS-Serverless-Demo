@@ -5,12 +5,41 @@ AWS CTO Werner Vogels曾经在AWS re:Invent大会上提到: 如果把云计算�
 [带您玩转Lambda，轻松构建Serverless后台【上篇】](带您玩转Lambda，轻松构建Serverless后台[上篇].md)
 
 1. AWS Lambda怎么用
+
 2. Lambda + API Gateway
+
 3. Lambda + API Gateway + 传参
+
 4. 快速部署Lambda函数
+
 5. Lambda + CloudWatch Event
+
 6. Lambda + DynamoDB –>数据写入到数据库
+
 7. Lambda + DynamoDB –>数据从数据库读取
+
 8. Lambda + API Gateway + DynamoDB
+
 9. Lambda + API Gateway + DynamoDB + S3 + CloudFront
+
 10. Lambda + CodeCommit + CodePipeline + CodeBuild + CloudFormation
+
+    [带您玩转Lambda，轻松构建Serverless后台【下篇】](带您玩转Lambda，轻松构建Serverless后台[下篇].md)
+
+11. LambdaAuthorizerAPIRequest
+
+12. LambdaCloudWatchScheduledEventTest
+
+13. LambdaConcurrentExecutionsDemo
+
+14. LambdaEC2AutoTag
+
+15. LambdaKinesisDemo
+
+16. LambdaPostCommentHTML
+
+17. LambdaS3CreateThumbnail
+
+18. LambdaSNSNotification
+
+19. LambdaSQSMessageTrigger
